@@ -22,3 +22,10 @@
 
 ## Not possible yet
 - Switching active slot without a PC (`fastboot set_active`)
+
+## Findings from the stock bootloader log (uboot_log)
+- Generic ramdisk in `boot` is empty; the bootloader loads `init_boot` (3110766 B) plus the vendor ramdisk (36140521 B).
+- Bootloader unlocked: boot image verification skipped, AVB errors allowed. Current `init_boot` already fails verify (0x3) and still boots.
+- A/B metadata is AOSP `BCAB` at `misc` offset 2048: A prio 14 tries 1 successful 0, B prio 15 tries 1 successful 1 (booted B).
+- Kernel config: no DEVTMPFS, FB, USER_NS or CGROUP_PIDS; DRM present, no fbcon. NCM/ECM/ACM gadget functions present.
+- Unverified: whether the bootloader decrements `tries_remaining` (automatic fallback to the other slot).
