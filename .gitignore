@@ -1,0 +1,6 @@
+*.img
+*.ko
+*.gz
+*.apk
+work/
+dumps/

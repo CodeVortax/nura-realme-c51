@@ -1,0 +1,21 @@
+# Experimental skeleton, not built or tested.
+# Open decision: (a) wrap the Image from the user's own stock boot.img (not redistributable,
+# must be supplied locally), or (b) build from Realme/Unisoc kernel source.
+pkgname=linux-realme-rmx3830
+pkgver=5.15.189
+pkgrel=0
+pkgdesc="Realme C51 kernel (placeholder)"
+arch="aarch64"
+_flavor="realme-rmx3830"
+url="https://kernel.org"
+license="GPL-2.0-only"
+options="!strip !check !tracedeps pmb:cross-native"
+makedepends="bash"
+source=""
+
+build() { :; }
+package() {
+	# TODO: install kernel Image + matching /lib/modules/$pkgver once the kernel source route is chosen
+	mkdir -p "$pkgdir"/boot
+}
+sha512sums=""

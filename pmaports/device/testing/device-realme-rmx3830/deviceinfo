@@ -1,0 +1,25 @@
+# Experimental. Values marked TODO are unverified.
+deviceinfo_format_version="0"
+deviceinfo_name="Realme C51"
+deviceinfo_manufacturer="Realme"
+deviceinfo_codename="realme-rmx3830"
+deviceinfo_year="2023"
+deviceinfo_arch="aarch64"
+deviceinfo_chassis="handset"
+
+deviceinfo_screen_width="720"
+deviceinfo_screen_height="1600"
+
+deviceinfo_flash_method="fastboot"
+deviceinfo_generate_bootimg="true"
+deviceinfo_header_version="4"
+deviceinfo_flash_pagesize="4096"
+deviceinfo_flash_offset_base="0x00000000"
+deviceinfo_flash_offset_kernel="0x00008000"
+deviceinfo_flash_offset_ramdisk="0x05400000"
+deviceinfo_flash_offset_tags="0x00000100"
+deviceinfo_flash_offset_dtb="0x01f00000"
+deviceinfo_bootimg_has_init_boot="true" # TODO: not a standard pmaports option, init_boot flashing is manual for now
+
+deviceinfo_kernel_cmdline="console=ttyS1,115200n8 earlycon" # TODO: confirm what the bootloader appends
+deviceinfo_dtb="" # TODO: dtb lives in vendor_boot, may not be needed in boot.img

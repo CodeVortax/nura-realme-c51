@@ -1,0 +1,18 @@
+# Order taken from vendor_boot modules.load.recovery (verified on stock firmware).
+# For now these are loaded from the stock vendor_boot ramdisk, not from this initramfs.
+clk-sprd
+ums9230-clk
+spi-sprd-adi
+sprd-pmic-spi
+sc2730-regulator
+gpio-sprd
+gpio-eic-sprd
+sdhci-sprd
+mmc_hsq
+mmc_swcq
+sprd-bc1p2
+sprd_usbpinmux
+phy-sprd-commonphy
+phy-sprd-qogirl6
+musb_hdrc
+musb_sprd

@@ -1,0 +1,29 @@
+# Maintainer: MR.English2008
+# Experimental skeleton, not built or tested.
+pkgname=device-realme-rmx3830
+pkgdesc="Realme C51"
+pkgver=0.1
+pkgrel=0
+url="https://github.com/CHANGE-ME/nura-realme-c51"
+license="MIT"
+arch="aarch64"
+options="!check !archcheck"
+depends="postmarketos-base linux-realme-rmx3830"
+makedepends="devicepkg-dev"
+source="deviceinfo modules-initfs"
+subpackages="$pkgname-nonfree-firmware:nonfree_firmware"
+
+build() {
+	devicepkg_build "$startdir" "$pkgname"
+}
+
+package() {
+	devicepkg_package "$startdir" "$pkgname"
+}
+
+nonfree_firmware() {
+	pkgdesc="Wi-Fi/BT/modem firmware (TODO: dump from /vendor/firmware, not redistributable)"
+	mkdir "$subpkgdir"
+}
+
+sha512sums="SKIP"
